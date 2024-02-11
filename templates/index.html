@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zero hunger</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <section class="header">
@@ -16,7 +16,8 @@
             <li><a href="#">Area</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="hotel.html">hotel Info</a></li>
-            <li><a href="fd.html">food donation</a></li>
+            <li><a href="{{ url_for('food_donation') }}">food donation</a></li>
+
             <li><a href="location.html">Location</a></li>
             <li><a href="login page - Copy/">login</a></li>
             </ul>
@@ -44,7 +45,7 @@
     
        
         <div class="area-col">
-            <img src="shutterstock-79424329.webp">
+            <img src="{{ url_for('static', filename='img/shutterstock-79424329.jpg') }}" alt="Image">
             <div class="layer">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit aliquam vero quibusdam placeat amet?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis odit aperiam corporis?
