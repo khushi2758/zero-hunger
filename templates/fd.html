@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotel info</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <section class=" sub-header">
+        <nav>
+            <p>LOGO</p>
+            <div class="nav-links">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('area') }}">Area</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('hotel_info') }}">hotel Info</a></li>
+            <li><a href="{{ url_for('food_donation') }}">food donation</a></li>
+            <li><a href="{{ url_for('location') }}">Location</a></li>
+        <li><a href="login page - Copy/">login</a></li>
+        </ul>
+        </div>
+        </nav>
+        <h1>Food Donation Page</h1>
+    </section>
+        <!-----------------------form----------------------------------------------->
+        <section>
+        <div class = "container-f">
+        <form class="h-form"  id="registrationForm" action="/submit" method="post">
+        <input type="text" name="Name"   placeholder="Name"  class ="contact-ip" required>
+        <input type="email" id="email" name="email" placeholder="Email" class ="contact-ip" required>
+        <input type="number" id="phone" name="phone" placeholder="Phone Number" class ="contact-ip" required>
+        <input type="address" name="address" id="address"  placeholder="Address" class ="contact-ip" required>
+        <input type="number" id="quantity" name="quantity" placeholder="Quantity of Food (in kg)" class ="contact-ip" min="1">
+        <button class="btnf" type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
