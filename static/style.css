@@ -9,7 +9,7 @@
 .header{
     min-height: 100vh;
     width: 100;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.31),rgba(0, 0, 0, 0)) ,url(..img/hunger.jpeg) ;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.31),rgba(0, 0, 0, 0)) ,url(img/hunger.jpeg) ;
     background-size: cover;
 background-repeat: no-repeat;
 position: relative;
@@ -253,7 +253,7 @@ font-weight: 600;
 .sub-header{
     height: 50vh;
     width: 100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.31),rgba(0, 0, 0, 0)) ,url(..img/hunger.jpeg) ;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.31),rgba(0, 0, 0, 0)) ,url(img/hunger.jpeg) ;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -291,7 +291,7 @@ justify-content: center;
 /*---------------------------------------------------form-----------------------------------------*/
 
 .container-f {  
-background-image: linear-gradient(rgb(254, 253, 253), rgba(231, 174, 106, 0.463),rgba(203, 203, 239, 0.156)),url(..img/food1.jpg) ;
+background-image: linear-gradient(rgb(254, 253, 253), rgba(231, 174, 106, 0.463),rgba(203, 203, 239, 0.156)),url(img/food1.jpg) ;
 
 font-family: 'Mulish', sans-serif;
 display: flex;
