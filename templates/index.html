@@ -13,12 +13,12 @@
                 <div class="nav-links">
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('area') }}">Area</a></li>
+
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('hotel_info') }}">hotel Info</a></li>
             <li><a href="{{ url_for('food_donation') }}">food donation</a></li>
             <li><a href="{{ url_for('location') }}">Location</a></li>
-            <li><a href="login page - Copy/">login</a></li>
+     
             </ul>
             </div>
             </nav>
@@ -41,8 +41,6 @@
     <section class="area">
     <h2>Select Area , State And contry </h2>
     <p> Itaque, porro ab. Optio dignissimos laudantium possimus debitis.</p>
-    
-       
         <div class="area-col">
             <img src="{{ url_for('static', filename='img/shutterstock-79424329.jpg') }}" alt="Image">
             <div class="layer">
@@ -51,7 +49,6 @@
             </p>
             
             </div>
-      
         
     </div>
     <button class="btn"><a href="#"></a>Select Area</button>
@@ -64,19 +61,19 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, facere!</p>
     <div class="row">
 <div class="food-col">
-    <img src="food4.jpg" alt="">
+    <img src="{{ url_for('static', filename='img/food4.jpg') }}" alt="Image">
 <h3>donet food</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
 </div>
 <div class="food-col">
-    <img src="food2.jpg" alt="">
+    <img src="{{ url_for('static', filename='img/food2.jpg') }}" alt="Image">
 <h3>donet food</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
 </div>
 <div class="food-col">
-    <img src="food3.jpg" alt="">
+    <img src="{{ url_for('static', filename='img/food3.jpg') }}" alt="Image">
 <h3>donet food</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
