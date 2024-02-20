@@ -9,15 +9,16 @@
 <body>
     <section class=" sub-header">
         <nav>
-            <p>LOGO</p>
+            <p>SharePlate</p>
             <div class="nav-links">
         <ul>
             <li><a href="{{ url_for('home') }}">Home</a></li>
     
-            <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('hotel_info') }}">hotel Info</a></li>
             <li><a href="{{ url_for('food_donation') }}">food donation</a></li>
             <li><a href="{{ url_for('location') }}">Location</a></li>
+            
+            <li><a href="{{ url_for('about') }}">About</a></li>
  
         </ul>
         </div>
@@ -33,13 +34,12 @@
         <p>Welcome to our innovative website, dedicated to facilitating efficient food distribution! Register by selecting your country, state, and area. Hotel staff can input surplus food details, prompting local organizations to contact them for distribution to the needy. In case of leftover event food, individuals can use our platform to connect with organizations, ensuring no food goes to waste. Explore slum locations in your area to extend support. Join us in creating a world where excess food nourishes the hungry.</p>
         <button class="btn"><a href="#"></a>Know More</button>
     </div>
-<<<<<<< HEAD
+
     <div class="about-col"><img src="img/food1.jpg" alt=""></div>
     <div class="about-col"><img src="{{ url_for('static', filename='img/food1.jpg') }}" alt="Image"></div>
     
-=======
-    <div class="about-col"><img src="{{ url_for('static', filename='img/food1.jpg') }}" alt="Image"></div>
->>>>>>> 474ad910ef91b8e3c2e75a5dc869e238384bc453
+ 
+
 </div>
 <section class="footer">
     <h4>About Us</h4>

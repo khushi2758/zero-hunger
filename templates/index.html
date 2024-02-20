@@ -9,23 +9,25 @@
 <body>
     <section class="header">
             <nav>
-                <p>LOGO</p>
+                <p>SharePlate</p>
                 <div class="nav-links">
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
 
-            <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('hotel_info') }}">hotel Info</a></li>
             <li><a href="{{ url_for('food_donation') }}">food donation</a></li>
             <li><a href="{{ url_for('location') }}">Location</a></li>
+            
+            <li><a href="{{ url_for('about') }}">About</a></li>
      
             </ul>
             </div>
             </nav>
             <div class="text-box">
                 <h1>ZERO HUNGER</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestias tempore sequi dolorum beatae asperiores nemo, commodi omnis vitae saepe nostrum ea mollitia non qui labore aperiam cumque molestiae in libero repellat! Quod tenetur, nihil ut deserunt repudiandae 
-                   <br> aspernatur aliquid, et eligendi illo, quos sint?</p>
+                <p>Imagine a world where every stomach is full, where children thrive, and potential blooms unrestricted by hunger. 
+                    That's the Zero Hunger dream, and it's not just a dream - it's a goal we can achieve together. This website is your gateway to understanding the challenges, exploring solutions, and joining the movement to build a 
+                    future where #ZeroHunger is a reality, not a distant hope. Let's start the journey today.</p>
                     
             </div>
     </section>
@@ -33,54 +35,53 @@
     <!--Hotel Inforfation--->
     <section class="HotelInforfation">
         <h2>Hotel Inforfation </h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, <br> Nemo cum iste voluptatem unde. Et soluta nobis corporis rem minima aliquid maxime voluptates nam quas quod, non magnam hic?</p>
-<button class="btn"><a href="#"></a>Hotel Inforfation</button>
+        <p>Our website serves as a vital platform for hotels in the area to communicate their surplus food availability, facilitating the connection between excess provisions and those in need. By leveraging this digital network, we strive to bridge the gap between abundance and scarcity, aiming to eradicate hunger from our communities. Through our collective efforts, we endeavor to make strides towards a world where no one goes to bed hungry.</p>
+<button class="btn"><a href="{{ url_for('hotel_info') }}"></a>Hotel Inforfation</button>
     </section>
 
     <!--Area selection--->
     <section class="area">
-    <h2>Select Area , State And contry </h2>
+    <h2>Location</h2>
     <p> Itaque, porro ab. Optio dignissimos laudantium possimus debitis.</p>
         <div class="area-col">
             <img src="{{ url_for('static', filename='img/shutterstock-79424329.jpg') }}" alt="Image">
             <div class="layer">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit aliquam vero quibusdam placeat amet?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis odit aperiam corporis?
+            <p>
+                Our website offers a unique feature allowing users to share their current location, enabling us to track surplus food availability in their vicinity. By voluntarily providing their location, individuals can contribute to our mission of redistributing excess food to those in need. Through our platform, we endeavor to bridge the gap between food wastage and hunger by efficiently connecting donors with local communities in need. Join us in our efforts to make a meaningful impact by sharing your location and helping us reach out to those who can benefit from your generosity.
             </p>
             
             </div>
         
     </div>
-    <button class="btn"><a href="#"></a>Select Area</button>
+    <button class="btn"><a href="{{ url_for('location') }}"></a>Select Area</button>
     </section>
 
     <!--------food donation---------->
 
 <section class="food">
-    <h1>Food Donetion</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, facere!</p>
+    <h2>Donate food</h2>
     <div class="row">
 <div class="food-col">
     <img src="{{ url_for('static', filename='img/food4.jpg') }}" alt="Image">
-<h3>donet food</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+<p>"Join us in the fight against hunger. Every donation counts!"</p>
 
 </div>
 <div class="food-col">
     <img src="{{ url_for('static', filename='img/food2.jpg') }}" alt="Image">
-<h3>donet food</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p>"Be a hunger hero! Your donation can make a world of difference."</p>
 
 </div>
 <div class="food-col">
     <img src="{{ url_for('static', filename='img/food3.jpg') }}" alt="Image">
-<h3>donet food</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+<p>"Help us fill plates, not landfills. Donate today to fight hunger!"
+</p>
 
 </div>
 
 </div>
-<button class="btn"><a href="#"></a>Donation</button>
+<button class="btn"><a href="{{ url_for('food_donation') }}"></a>Donation</button>
     </section>
 </section>
     <!--------about---------->
@@ -88,7 +89,7 @@
         <h4>About Us</h4>
         <p>Welcome to our platform! Register and easily connect with local hotels and organizations <br>
         to reduce food wastage. Choose your country, state, and area to discover available hotels or provide your location for <br event leftovers. Help organizations find surplus food, and explore mapped slum areas in your vicinity, fostering a community-driven approach to combating hunger. Join us in making a positive impact today!</p>
-        <button class="btn"><a href="#"></a>Know More</button>
+        <button class="btn"><a href="{{ url_for('about') }}"></a>Know More</button>
     </section>
 </body>
 </html>
