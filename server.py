@@ -19,7 +19,6 @@ def submit():
         phone = request.form['phone']
         address = request.form['address']
         quantity = request.form['quantity']
-
         if not (name and email and phone and address and quantity):
             return "All fields are required"
         #Data to be fetched and stored

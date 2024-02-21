@@ -11,9 +11,9 @@
     width: 100;
     background-image:linear-gradient(rgba(0, 0, 0, 0.31),rgba(0, 0, 0, 0)) ,url(img/hunger.jpeg) ;
     background-size: cover;
-background-repeat: no-repeat;
-position: relative;
-color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
 }
 
 nav{
@@ -22,7 +22,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     backdrop-filter: blur(20px);
-   height: 10px;
+    height: 10px;
     box-shadow: rgba(255, 255, 255, 0.416);
 
 
