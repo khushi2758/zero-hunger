@@ -7,7 +7,18 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        .notification.completed{
+            background-color: #0ff485; 
+        }
 
+        .tick-icon{
+            top: 5px;
+            left: 5px;
+            width: 24px;
+            height: 24px;
+            z-index: 1;
+            margin: 0px 203px;
+        }
     </style>
 </head>
 <body>
@@ -19,23 +30,60 @@
             <p>Phone: {{ notification.phone }}</p>
             <p>Address: {{ notification.address }}</p>
             <p>Quantity: {{ notification.quantity }}</p>
+            <button class="complete-button">Mark as complete</button>
         </div>
-        <button class="complete-button">Mark as complete</button>
     </div>
     <script>
-document.querySelectorAll('.complete-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const notificationId = button.dataset.id;
-        const notificationElement = document.getElementById('notification-' + notificationId);
-        notificationElement.classList.add('completed');
-        button.disabled = true;
-        const tickIcon = document.createElement('img');
-        tickIcon.src = 'https://img.icons8.com/material-rounded/24/000000/checkmark--v1.png';
-        tickIcon.classList.add('tick-icon');
-        notificationElement.prepend(tickIcon);
-    });
-});
+        function fetchData() {
+            var xhr = new XMLHttpRequest();
+            var url = '../data/registrations.json';
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    handleData(data);
+                } else {
+                    console.error('Error fetching data:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Network error while fetching data');
+            };
+            xhr.send();
+        }
+
+        function handleData(data) {
+            var container = document.getElementById('notification-container');
+            container.innerHTML = '';
+            data.forEach(function(notification) {
+                var div = document.createElement('div');
+                div.className = 'notification';
+
+                div.innerHTML = `
+                    <p class="notification-content">
+                        <strong>Name:</strong> ${notification.name}<br>
+                        <strong>Email:</strong> ${notification.email}<br>
+                        <strong>Phone:</strong> ${notification.phone}<br>
+                        <strong>Address:</strong> ${notification.address}<br>
+                        <strong>Quantity:</strong> ${notification.quantity}
+                    </p>
+                    <button class="complete-button" onclick="markAsComplete(this)">Mark as Complete</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function markAsComplete(button) {
+            var notification = button.parentElement;
+            notification.classList.add('completed');
+            button.disabled = true;
+            var tickIcon = document.createElement('img');
+            tickIcon.src = 'https://img.icons8.com/material-rounded/24/000000/checkmark--v1.png';
+            tickIcon.classList.add('tick-icon');
+            notification.prepend(tickIcon);
+        }
+
+        fetchData();
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
