@@ -106,18 +106,6 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.delete-button {
-    background-color: #ff5555;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.delete-button:hover {
-    background-color: #ff0000;
-}
-
 .notification:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -129,21 +117,15 @@ a:hover {
     color: #333;
 }
 
-.notification-buttons {
-    margin-top: 10px;
+.notification-completed {
+    background-color: #0dc700; 
 }
 
-.notification-buttons button {
-    margin-right: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 14px;
-}
-
-.notification-buttons button:hover {
-    background-color: #0056b3;
+.tick-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
 }

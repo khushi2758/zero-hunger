@@ -7,16 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        .notification.complete {
-            background-color: lightgreen;
-        }
-        .completed-icon {
-            color: green;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-        }
+
     </style>
 </head>
 <body>
@@ -29,13 +20,14 @@
             <p>Address: {{ notification.address }}</p>
             <p>Quantity: {{ notification.quantity }}</p>
         </div>
+        <button class="complete-button">Mark as complete</button>
     </div>
     <script>
 document.querySelectorAll('.complete-button').forEach(button => {
     button.addEventListener('click', () => {
         const notificationId = button.dataset.id;
         const notificationElement = document.getElementById('notification-' + notificationId);
-        notificationElement.classList.add('complete');
+        notificationElement.classList.add('completed');
         button.disabled = true;
         const tickIcon = document.createElement('img');
         tickIcon.src = 'https://img.icons8.com/material-rounded/24/000000/checkmark--v1.png';

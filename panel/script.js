@@ -4,9 +4,12 @@ function fetchData() {
     xhr.open('GET', url, true);
     xhr.onload = function() {
         if (xhr.status === 200) {
-            var data = JSON.parse(xhr.responseText);
-
-            handleData(data);
+            try {
+                var data = JSON.parse(xhr.responseText);
+                handleData(data);
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+            }
         } else {
             console.error('Error fetching data:', xhr.statusText);
         }
@@ -16,13 +19,13 @@ function fetchData() {
     };
     xhr.send();
 }
+
 function handleData(data) {
     var container = document.getElementById('notification-container');
     container.innerHTML = '';
     data.forEach(function(notification) {
         var div = document.createElement('div');
         div.className = 'notification';
-
         div.innerHTML = `
             <p class="notification-content">
                 <strong>Name:</strong> ${notification.name}<br>
@@ -35,24 +38,4 @@ function handleData(data) {
         container.appendChild(div);
     });
 }
-function deleteNotification(button) {
-    var notification = button.parentElement.parentElement;
-    notification.remove();
-}
-function markAsRead(button) {
-    var notification = button.parentElement.parentElement;
-    notification.classList.add('read');
-}
-document.querySelectorAll('.complete-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const notificationId = button.dataset.id;
-        const notificationElement = document.getElementById('notification-' + notificationId);
-        notificationElement.classList.add('completed-icon');
-        button.disabled = true;
-        const tickIcon = document.createElement('img');
-        tickIcon.src = 'https://img.icons8.com/material-rounded/24/000000/checkmark--v1.png';
-        tickIcon.classList.add('tick-icon');
-        notificationElement.prepend(tickIcon);
-    });
-});
 fetchData();
