@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Notifications</h1>
+    <div id="notification-container">
+        <div class="notification" id="notification-{{ notification.id }}">
+            <p>Name: {{ notification.name }}</p>
+            <p>Email: {{ notification.email }}</p>
+            <p>Phone: {{ notification.phone }}</p>
+            <p>Address: {{ notification.address }}</p>
+            <p>Quantity: {{ notification.quantity }}</p>
+        </div>
+        <button class="complete-button">Mark as complete</button>
+    </div>
+    <script>
+document.querySelectorAll('.complete-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const notificationId = button.dataset.id;
+        const notificationElement = document.getElementById('notification-' + notificationId);
+        notificationElement.classList.add('completed');
+        button.disabled = true;
+        const tickIcon = document.createElement('img');
+        tickIcon.src = 'https://img.icons8.com/material-rounded/24/000000/checkmark--v1.png';
+        tickIcon.classList.add('tick-icon');
+        notificationElement.prepend(tickIcon);
+    });
+});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

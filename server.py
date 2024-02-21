@@ -33,8 +33,9 @@ def submit():
         save_registration(registration_data)
         
         #email msg 
-
-        summary_message = f"""We are delighted to inform you that your registration for food donation at Zero Hunger was successful!\n {name} Your commitment to contributing to our cause is truly appreciated, and we are thrilled to have you join our efforts in fighting hunger and making a positive impact in our community\n"""
+        
+        summary_message = f"""We are delighted to inform you that your registration for food donation at Zero Hunger was successful!
+        {name} Your commitment to contributing to our cause is truly appreciated, and we are thrilled to have you join our efforts in fighting hunger and making a positive impact in our community\n"""
         summary_message += f"Details:\n"
         summary_message += f"Email: {email}\n"
         summary_message += f"Phone: {phone}\n"
@@ -47,7 +48,7 @@ def submit():
     
 def save_registration(data):
     try:
-        with open('data/registrations.json', 'r') as file: #Form Details are being stored in a json file
+        with open('data/registrations.json', 'r') as file:      #Form Details are being stored in a json file
             registrations = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         registrations = []
@@ -74,7 +75,6 @@ def send_email(receiver_email, message):
     server.quit()
 
 #routing html pages with python flask server
-
 @app.route('/food_donation')
 def food_donation():
     return render_template('fd.html') 
