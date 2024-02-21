@@ -111,17 +111,18 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.notification-content {
+.notification-container{
     font-size: 16px;
     line-height: 1.5;
+    display: flex;
     color: #333;
 }
 
-.notification-completed {
+.notification-completed{
     background-color: #0dc700; 
 }
 
-.tick-icon {
+.tick-icon{
     position: absolute;
     top: 5px;
     left: 5px;
