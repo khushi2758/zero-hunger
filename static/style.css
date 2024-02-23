@@ -177,6 +177,7 @@ height: 500px;
 backdrop-filter: blur(10px);
 }
 .layer p{
+    padding-top: 15px;
     width: 100%;
     font-weight: 500;
     color: #fff;
@@ -344,7 +345,7 @@ backdrop-filter: blur(100px);
 cursor: pointer;
 }
 
-/*-------------------------------------------------------------------------------------------*/
+/*-----------------------------------location--------------------------------------------------------*/
 .location{
     width: 80%;
     margin: auto;
